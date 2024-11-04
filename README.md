@@ -1,26 +1,21 @@
 # AESCipher
-A python-based implementation over the concept of Advanced Encryption Standard (AES) algorithm
 
-Absolutely! Here’s the entire README in one single message for easy copying and pasting:
+This file is a custom implementation of the AES hashing technique for a cryptography-based application. The AESCipher class provides methods for encrypting and decrypting data using the AES algorithm in CBC (Cipher Block Chaining) mode. 
 
 ```markdown
-# AESCipher
-
-AESCipher is a Python implementation of the AES (Advanced Encryption Standard) encryption algorithm. This module provides easy-to-use methods for encrypting and decrypting text using a specified key. It supports both string and byte array inputs, making it versatile for various applications.
-
 ## Features
 
-- **AES Encryption**: Uses AES with CBC (Cipher Block Chaining) mode for secure encryption.
-- **Base64 Encoding**: Encrypted output is Base64 encoded for easy transmission.
+- **AES Encryption**: Implements AES with CBC mode for secure encryption.
+- **Base64 Encoding**: The encrypted output is Base64 encoded for easier transmission.
 - **Hexadecimal Representation**: Supports converting encrypted data into a hexadecimal format prefixed with `0x`.
 - **Padding and Unpadding**: Automatically handles padding of input data to ensure proper block size.
 
 ## Requirements
 
 - Python 3.x
-- `pycryptodome` library (for AES implementation)
+- `pycryptodome` or equivalent cryptography library
 
-You can install the required library using pip:
+To install the required library, you can use pip (if applicable):
 
 ```bash
 pip install pycryptodome
@@ -30,7 +25,7 @@ pip install pycryptodome
 
 ### Initialization
 
-Create an instance of the `AESCipher` class with a key:
+Create an instance of the AESCipher class with a key:
 
 ```python
 from aes_cipher import AESCipher
@@ -61,16 +56,17 @@ print(decrypted)  # Output: Hello world!
 Here’s a full example demonstrating encryption and decryption:
 
 ```python
-c = AESCipher("admin@123")
-input_string = "Hello world!"
+if __name__ == "__main__":
+    c = AESCipher("admin@123")
+    input_string = "Hello world!"
 
-# Encrypt the input
-encrypted = c.encrypt_bytes32(input_string)
-print(f"Encrypted: {encrypted}")
+    # Encrypt the input
+    encrypted = c.encrypt_bytes32(input_string)
+    print(f"Encrypted: {encrypted}")
 
-# Decrypt the previously encrypted value
-decrypted = c.decrypt_bytes32(encrypted)
-print(f"Decrypted: {decrypted}")
+    # Decrypt the previously encrypted value
+    decrypted = c.decrypt_bytes32(encrypted)
+    print(f"Decrypted: {decrypted}")
 ```
 
 ## Notes
@@ -80,5 +76,5 @@ print(f"Decrypted: {decrypted}")
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the MIT License - see the LICENSE file for details.
 ```
